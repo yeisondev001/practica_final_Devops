@@ -1,18 +1,18 @@
-{
-  "name": "devops-app-backend",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "node src/index.js",
-    "test": "jest --coverage",
-    "lint": "eslint src --ext .js"
-  },
-  "dependencies": {
-    "express": "^4.18.2",
-    "sqlite3": "^5.1.6"
-  },
-  "devDependencies": {
-    "jest": "^29.0.0",
-    "supertest": "^6.3.3",
-    "eslint": "^8.40.0"
-  }
+const express = require("express");
+const routes = require("./routes");
+const app = express();
+
+// Middlewares
+app.use(express.json());
+
+// Rutas
+app.use(routes);
+
+// Solo inicia el servidor si este archivo es ejecutado directamente
+if (require.main === module) {
+  app.listen(3000, () => {
+    console.log("Servidor corriendo en 3000");
+  });
 }
+
+module.exports = app;
