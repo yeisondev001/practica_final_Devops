@@ -38,5 +38,6 @@ jobs:
 
       - name: Build and push backend image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/devops-backend:latest ./backend
-          docker push ${{ secrets.DOCKER_USERNAME }}/devops-backend:latest
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/parcial_final:latest ./backend
+          docker push ${{ secrets.DOCKER_USERNAME }}/parcial_final:latest
+
