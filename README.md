@@ -1,5 +1,5 @@
 
-# Proyecto Final – Pipeline DevOps (Node.js + SQLite + GitHub Actions + Docker)
+#  Proyecto Final – Pipeline DevOps (Node.js + SQLite + GitHub Actions + Docker)
 
 ## 📌 Objetivo
 Desarrollar e implementar un pipeline CI/CD completo con pruebas, contenedores, integración continua y despliegue automatizado.
