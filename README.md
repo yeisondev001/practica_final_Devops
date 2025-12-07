@@ -1,4 +1,4 @@
-# practica_final_Devops
+
 # Proyecto Final – Pipeline DevOps (Node.js + SQLite + GitHub Actions + Docker)
 
 ## 📌 Objetivo
