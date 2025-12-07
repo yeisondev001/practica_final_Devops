@@ -1,15 +1,9 @@
 const API = "http://localhost:3000";
 
-const form = document.getElementById("itemForm");
-const itemName = document.getElementById("itemName");
-const list = document.getElementById("itemsList");
-
-window.onload = loadItems;
-
 async function loadItems() {
   const res = await fetch(`${API}/items`);
   const items = await res.json();
-
+  const list = document.getElementById("itemsList");
   list.innerHTML = "";
   items.forEach(i => {
     const li = document.createElement("li");
@@ -18,16 +12,16 @@ async function loadItems() {
   });
 }
 
-form.addEventListener("submit", async (e) => {
+document.getElementById("itemForm")?.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const name = itemName.value;
-
+  const name = document.getElementById("itemName").value;
   await fetch(`${API}/items`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ name })
   });
-
-  itemName.value = "";
-  loadItems();
+  document.getElementById("itemName").value = "";
+  await loadItems();
 });
+
+window.addEventListener("load", loadItems);
